@@ -34,7 +34,7 @@ function App() {
       }}
     >
       <GridItem area="nav">
-        <NavBar onSearch={handleSearch} />
+        <NavBar onSearch={handleSearch} onSelectGenre={(genre) => setSelectedGenre(genre)} selectedGenre={selectedGenre} />
       </GridItem>
       <GridItem area="aside" paddingX={5} display={{ base: "none", lg: "block" }}>
         <GenreList selectedGenre={selectedGenre} onSelectGenre={(genre) => setSelectedGenre(genre)} />
