@@ -7,10 +7,11 @@ import type { Platform } from "../hooks/usePlatforms";
 interface Props {
   selectedGenre: Genre | null;
   selectedPlatform: Platform | null;
+  sortOrder: string;
 }
 
-const GameGrid = ({ selectedGenre, selectedPlatform }: Props) => {
-  const { data, error } = useGames(selectedGenre, selectedPlatform);
+const GameGrid = ({ selectedGenre, selectedPlatform, sortOrder }: Props) => {
+  const { data, error } = useGames(selectedGenre, selectedPlatform, sortOrder);
 
   return (
     <>
