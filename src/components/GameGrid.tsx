@@ -8,10 +8,11 @@ interface Props {
   selectedGenre: Genre | null;
   selectedPlatform: Platform | null;
   sortOrder: string;
+  searchText: string;
 }
 
-const GameGrid = ({ selectedGenre, selectedPlatform, sortOrder }: Props) => {
-  const { data, error } = useGames(selectedGenre, selectedPlatform, sortOrder);
+const GameGrid = ({ selectedGenre, selectedPlatform, sortOrder, searchText }: Props) => {
+  const { data, error } = useGames(selectedGenre, selectedPlatform, sortOrder, searchText);
 
   return (
     <>
