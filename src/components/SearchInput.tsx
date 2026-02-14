@@ -16,7 +16,7 @@ const SearchInput = ({ onSearch }: Props) => {
       if (ref.current) onSearch(ref.current.value);
     }}>
       <InputGroup startElement={<BsSearch />}>
-        <Input ref={ref} borderRadius={20} placeholder="Search games..." variant="filled" />
+        <Input ref={ref} borderRadius={20} placeholder="Search games..." variant="subtle" />
       </InputGroup>
     </form>
   );
