@@ -1,6 +1,7 @@
 import { SimpleGrid, Text } from "@chakra-ui/react";
 import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
+import GameCardContainer from "./GameCardContainer";
 import type { Genre } from "../hooks/useGenres";
 import type { Platform } from "../hooks/usePlatforms";
 
@@ -19,7 +20,9 @@ const GameGrid = ({ selectedGenre, selectedPlatform, sortOrder, searchText }: Pr
       {error && <Text color='tomato'>{error}</Text>}
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} padding="10px" gap={6}>
         {data.map((game) => (
-          <GameCard key={game.id} game={game} />
+          <GameCardContainer key={game.id}>
+            <GameCard game={game} />
+          </GameCardContainer>
         ))}
       </SimpleGrid>
     </>
