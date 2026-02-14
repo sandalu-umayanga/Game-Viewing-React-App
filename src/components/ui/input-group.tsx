@@ -1,13 +1,12 @@
-import type { InputProps } from "@chakra-ui/react"
-import { Group, Input as ChakraInput } from "@chakra-ui/react"
+import { Group, InputAddon } from "@chakra-ui/react"
 import * as React from "react"
 
 export interface InputGroupProps extends React.ComponentProps<typeof Group> {
   startElement?: React.ReactNode
   endElement?: React.ReactNode
   children?: React.ReactNode
-  startElementProps?: React.ComponentProps<typeof ChakraInput.Addon>
-  endElementProps?: React.ComponentProps<typeof ChakraInput.Addon>
+  startElementProps?: React.ComponentProps<typeof InputAddon>
+  endElementProps?: React.ComponentProps<typeof InputAddon>
 }
 
 export const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
@@ -24,15 +23,15 @@ export const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
     return (
       <Group ref={ref} {...rest}>
         {startElement && (
-          <ChakraInput.Addon pointerEvents="none" {...startElementProps}>
+          <InputAddon pointerEvents="none" {...startElementProps}>
             {startElement}
-          </ChakraInput.Addon>
+          </InputAddon>
         )}
         {children}
         {endElement && (
-          <ChakraInput.Addon pointerEvents="none" {...endElementProps}>
+          <InputAddon pointerEvents="none" {...endElementProps}>
             {endElement}
-          </ChakraInput.Addon>
+          </InputAddon>
         )}
       </Group>
     )
